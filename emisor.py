@@ -1,5 +1,7 @@
+from matplotlib import pyplot as plt
 import random
 import socket
+import numpy as np
 from bitarray import bitarray
 #Este es el cliente, se encarga de conectar con el servidor. Se encarga de enviar los datos.  
 
