@@ -3,6 +3,9 @@ import socket
 HOST = "127.0.0.1"
 PORT = 60000
 
+#def fletcherCheckSum(bArray):
+
+
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
 
@@ -20,6 +23,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
 
             connection.sendall(data)
-            print(data)
+            print(data.decode())
             print("El mensaje recibido es:", repr(data))
 
