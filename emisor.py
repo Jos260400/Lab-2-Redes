@@ -1,7 +1,5 @@
-from matplotlib import pyplot as plt
 import random
 import socket
-import numpy as np
 from bitarray import bitarray
 #Este es el cliente, se encarga de conectar con el servidor. Se encarga de enviar los datos.  
 
@@ -36,6 +34,8 @@ def checkSum2(message, sections):
     sum2 = bin(int(p1.to01(),2) + int(p2.to01(),2) + int(p3.to01(),2) + int(p4.to01(),2))[2:]
 
     print("El resultado del checksum pos-ruido es:",sum2)
+
+
     return sum2
 
 
@@ -65,7 +65,7 @@ def checkTotalSum(sum1,sum2):
     elif (sum1 != sum2):
         print("Fallo")
     
-    
+
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     #Se conecta con el servidor (receptor)
@@ -73,11 +73,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     
     sum1 = checkSum1(bArray, len(bArray))
     noiseFunction(bArray)
-    sum2 = checkSum2(bArray, len(bArray))
+    #sum2 = checkSum2(bArray, len(bArray))
     
-    checkTotalSum(sum1, sum2)
+    #checkTotalSum(sum1, sum2)
 
     #Se envia el mensaje, hola mundo como prueba de envio
+    print(bArray)
     s.sendall(bArray)
 
     #El receptor envió el "hola mundo" de vuelta

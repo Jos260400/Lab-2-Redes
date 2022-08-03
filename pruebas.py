@@ -1,8 +1,6 @@
-from matplotlib import pyplot as plt
 from email import message
 import random
 import string
-import numpy as np
 from bitarray import bitarray
 
 randomPosition = random.randrange(0,2,1)
