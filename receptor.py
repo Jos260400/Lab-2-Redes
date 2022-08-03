@@ -1,3 +1,5 @@
+from matplotlib import pyplot as plt
+import numpy as np
 import socket
 
 HOST = "127.0.0.1"
